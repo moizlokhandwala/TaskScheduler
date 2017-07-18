@@ -1,0 +1,22 @@
+﻿#LoginBlock{
+    margin:auto;
+    margin-top:2%;
+}
+
+input.ng-invalid {
+    border:1px solid red;
+}
+
+input.ng-valid {
+    border: 1px solid green;
+}
+
+textarea.ng-invalid {
+    border: 1px solid red;
+}
+
+textarea.ng-valid {
+    border: 1px solid green;
+}
+
+
