@@ -33,3 +33,38 @@ C:\Users\Moiz\documents\visual studio 2017\Projects\TaskScheduler\TaskScheduler\
 C:\Users\Moiz\documents\visual studio 2017\Projects\TaskScheduler\TaskScheduler\obj\Debug\TaskScheduler.dll
 C:\Users\Moiz\documents\visual studio 2017\Projects\TaskScheduler\TaskScheduler\obj\Debug\TaskScheduler.pdb
 C:\Users\Moiz\documents\visual studio 2017\Projects\TaskScheduler\TaskScheduler\bin\AjaxControlToolkit.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\csc.exe
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\csc.exe.config
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\csc.rsp
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\csi.exe
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\csi.rsp
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\System.AppContext.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\System.Collections.Immutable.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\System.IO.FileSystem.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\System.Reflection.Metadata.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\vbc.exe
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\vbc.exe.config
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\vbc.rsp
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\VBCSCompiler.exe
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\roslyn\VBCSCompiler.exe.config
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\TaskScheduler.dll.config
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\TaskScheduler.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\TaskScheduler.pdb
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\AjaxControlToolkit.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\Extra\Project\TaskScheduler\TaskScheduler\obj\Debug\TaskScheduler.csprojResolveAssemblyReference.cache
+E:\Extra\Project\TaskScheduler\TaskScheduler\obj\Debug\TaskScheduler.dll
+E:\Extra\Project\TaskScheduler\TaskScheduler\obj\Debug\TaskScheduler.pdb
