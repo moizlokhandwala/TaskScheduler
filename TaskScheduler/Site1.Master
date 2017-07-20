@@ -45,29 +45,21 @@
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-                <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-sign-out fa-fw"></i>
-                    </a></li>
+                <li><a href="Logout.aspx">
+                        <i class="fa fa-sign-out fa-fw"></i> Logout
+                    </a>
+                   
+
+                </li>
             </ul>
             <!-- /.navbar-top-links -->
 
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        <li class="sidebar-search">
-                            <div class="input-group custom-search-form">
-                                <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                            </div>
-                            <!-- /input-group -->
-                        </li>
-                        <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Users</a>
-                        </li>
+                        
+                        <asp:Literal runat="server" ID="menuItems"></asp:Literal>
+                       
                        
                     </ul>
                 </div>
@@ -75,11 +67,37 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
+           
             <div id="page-wrapper">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
 </div>
         </div> <%--Wrapper Ends Here--%>
     </form>
+
+       <!-- DataTables CSS -->
+    <link href="Library/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="Library/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="Library/dist/css/sb-admin-2.css" rel="stylesheet">
+     <!-- jQuery -->
+    <script src="Library/vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="Library/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="Library/vendor/metisMenu/metisMenu.min.js"></script>
+
+    <!-- DataTables JavaScript -->
+    <script src="Library/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="Library/vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="Library/vendor/datatables-responsive/dataTables.responsive.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="Library/dist/js/sb-admin-2.js"></script>
 </body>
 </html>

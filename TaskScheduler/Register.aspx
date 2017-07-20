@@ -205,11 +205,11 @@
                                    
                                     <div class="form-group col-md-6" ng-show="userType_ddl=='4'">
                                         <asp:Label runat="server" ID="cronum_lbl" Text="CRO Number"></asp:Label>
-                                        <asp:TextBox runat="server" ID="cronum_txt" ng-model="cronum_txt" placeholder="CRO Number" CssClass="form-control"  required="{{userType_ddl=='4'}}"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="cronum_txt" placeholder="CRO Number" CssClass="form-control"></asp:TextBox>
                                     </div>
                                     <div class="form-group col-md-6" ng-show="userType_ddl=='4'">
                                         <asp:Label runat="server" ID="articleDate_lbl" Text="Articleship Start Date"></asp:Label>
-                                        <asp:TextBox TextMode="Date" runat="server" ID="articleDate_txt" ng-model="articleDate_txt" placeholder="Articleship Date" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox TextMode="Date" runat="server" ID="articleDate_txt" placeholder="Articleship Date" CssClass="form-control"></asp:TextBox>
                                         <ajaxToolkit:CalendarExtender ID="CalendarExtender1" TargetControlID="articleDate_txt" Format="dd/MM/yyyy" runat="server" />
                                     </div>
 
@@ -228,11 +228,11 @@
 
                                     <div class="form-group col-md-6" ng-show="userType_ddl=='2'">
                                         <asp:Label runat="server" ID="membershipNumber_lbl" Text="Membership Number"></asp:Label>
-                                        <asp:TextBox runat="server" ng-model="membershipNumber_txt" ID="membershipNumber_txt" placeholder="Membership Number" CssClass="form-control" required="{{userType_ddl=='2'}}"></asp:TextBox>
+                                        <asp:TextBox runat="server" ID="membershipNumber_txt" placeholder="Membership Number" CssClass="form-control"></asp:TextBox>
                                     </div>
                                     <div class="form-group col-md-6" ng-show="userType_ddl=='2'">
                                         <asp:Label runat="server" ID="membershipDate_lbl" Text="Membership Date"></asp:Label>
-                                        <asp:TextBox TextMode="Date" ng-model="membershipDate_txt" runat="server" ID="membershipDate_txt" placeholder="Membership Date" CssClass="form-control" ></asp:TextBox>
+                                        <asp:TextBox TextMode="Date"  runat="server" ID="membershipDate_txt" placeholder="Membership Date" CssClass="form-control" ></asp:TextBox>
                                         <ajaxToolkit:CalendarExtender ID="CalendarExtender2" TargetControlID="membershipDate_txt" Format="dd/MM/yyyy" runat="server" />
                                     </div>
 
@@ -251,7 +251,7 @@
 
                                     <div class="form-group col-md-6">
                                         <asp:Button ID="register_btn" OnClick="register_btn_Click" Text="Register" runat="server" CssClass="btn btn-default btn-block" 
-                                            ng-disabled="form1.fullname_txt.$invalid"  />
+                                             />
 
                                        
                                     </div>
@@ -303,7 +303,7 @@
              }
 
              console.log('Function called');
-             console.log($scope.mobilecheckbox.value1);
+           //  console.log($scope.mobilecheckbox.value1);
           //   $scope.whatsappnumber_txt = $scope.mobilenumber_txt;
          };
 

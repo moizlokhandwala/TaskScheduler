@@ -11,6 +11,7 @@ namespace TaskScheduler
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            menuItems.Text = @"<li><a href = 'Users.aspx'><i class='fa fa-users fa-fw'></i> Users</a></li>";
 
         }
     }
