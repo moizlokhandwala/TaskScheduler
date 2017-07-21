@@ -34,7 +34,7 @@ namespace TaskScheduler.Model
                 roles.Add(role);
             }
             }
-            dbService.CloseDB();
+           // dbService.CloseDB();
             return roles;
         }
 

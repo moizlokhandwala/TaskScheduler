@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Users.aspx.cs" Inherits="TaskScheduler.Users" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link rel="stylesheet" type="text/css" href="Library/style.css" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
@@ -77,13 +78,25 @@
                                 <ItemTemplate>
                                     <asp:LinkButton ID="details_btn" runat="server" CausesValidation="false" CommandName="Details"
                                         CommandArgument='<%# Eval("ID") %>'>
-                                        <asp:Label runat="server" ID="details_lb" class="fa fa-edit">
+                                        <asp:Label runat="server" ID="details_lb" class="fa fa-user">
                                       
                                         </asp:Label>
 
                                     </asp:LinkButton>
                                 </ItemTemplate>
                             </asp:TemplateField>
+
+                            <asp:TemplateField ShowHeader="false">
+                                <ItemTemplate>
+                                    <asp:LinkButton runat="server" ID="activate_btn" CommandName="Inactive" CommandArgument='<%# Eval("ID")%>'>
+                                        <asp:Label ID="status_lbl" runat="server"
+                                        ></asp:Label>
+                                    </asp:LinkButton>
+                                    
+                                </ItemTemplate>
+                            </asp:TemplateField>
+
+
                         </Columns>
                     </asp:GridView>
                 </div>

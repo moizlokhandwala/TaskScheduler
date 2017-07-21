@@ -26,20 +26,45 @@ namespace TaskScheduler.Model
         {
             List<Task> tasks = new List<Task>();
 
-            OleDbDataReader dr = dbService.ExecuteDataReader("select * from STATUSCONFIG");
+            OleDbDataReader dr = dbService.ExecuteDataReader("select * from TASK");
 
             while (dr.Read())
             {
                 Task task = new Task();
 
+                PriorityConfig pr = new PriorityConfig();
+                StatusConfig sc = new StatusConfig();
+                User u = new User();
                 task.TaskID = dr.GetInt32(0);
                 task.Title = dr.GetString(1);
-
+                task.Description = dr.GetString(2);
+                task.priority = pr.GetPriority(dr.GetInt32(3));
+                task.Author = u.GetUserDetails(dr.GetInt32(4));
+                task.CreationDate = DateTime.Parse(dr["CREATIONDATE"].ToString());
+                task.Status = sc.GetStatus(dr.GetInt32(6));
 
                 tasks.Add(task);
             }
-            dbService.CloseDB();
+           // dbService.CloseDB();
             return tasks;
+        }
+
+        public Task GetTask(int id)
+        {
+            Task task = new Task();
+            List<Task> tasks = new List<Task>();
+            tasks = task.GetTasks();
+
+            foreach(Task t in tasks)
+            {
+                if (t.TaskID == id)
+                {
+                    task = t;
+                    break;
+                }
+            }
+
+            return task;
         }
 
 
@@ -53,7 +78,7 @@ namespace TaskScheduler.Model
             AddTaskQuery = AddTaskQuery.Replace("{Priority}", priority.ID+"");
             AddTaskQuery = AddTaskQuery.Replace("{Author}", Author.ID+"");
             AddTaskQuery = AddTaskQuery.Replace("{Status}", Status.ID+"");
-            AddTaskQuery = AddTaskQuery.Replace("{ASSIGNEE}", activity.ID+"");
+            AddTaskQuery = AddTaskQuery.Replace("{ASSIGNEE}", activity.Assignee.ID+"");
             AddTaskQuery = AddTaskQuery.Replace("{Comments}", activity.Comments);
 
             int result = dbService.ExecuteUpdate(AddTaskQuery);

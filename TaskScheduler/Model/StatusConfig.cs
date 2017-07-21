@@ -29,8 +29,23 @@ namespace TaskScheduler.Model
 
                 statuses.Add(status);
             }
-            dbService.CloseDB();
+            //dbService.CloseDB();
             return statuses;
+        }
+
+        public StatusConfig GetStatus(int id) {
+            StatusConfig sc = new StatusConfig();
+            List<StatusConfig> statuses = new List<StatusConfig>();
+            statuses = GetStatuses();
+            foreach(StatusConfig status in statuses)
+            {
+                if (status.ID == id)
+                {
+                    sc = status;
+                    break;
+                }
+            }
+            return sc;
         }
     }
 }

@@ -68,6 +68,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddTask.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Library\dist\css\sb-admin-2.css" />
     <Content Include="Library\dist\css\sb-admin-2.min.css" />
@@ -165,6 +166,7 @@
     <Content Include="Library\vendor\raphael\raphael.js" />
     <Content Include="Library\vendor\raphael\raphael.min.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="packages.config" />
     <Content Include="Register.aspx" />
     <Content Include="Site1.Master" />
@@ -222,6 +224,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TaskList.aspx" />
     <Content Include="UserDetails.aspx" />
     <Content Include="Users.aspx" />
     <Content Include="Web.config">
@@ -229,6 +232,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddTask.aspx.cs">
+      <DependentUpon>AddTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddTask.aspx.designer.cs">
+      <DependentUpon>AddTask.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -243,8 +253,20 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Activity.cs" />
+    <Compile Include="ViewModel\ActivityView.cs" />
     <Compile Include="Model\Feature.cs" />
+    <Compile Include="Model\PriorityConfig.cs" />
     <Compile Include="Model\Role.cs" />
+    <Compile Include="Model\StatusConfig.cs" />
+    <Compile Include="Model\Task.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
@@ -261,6 +283,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TaskList.aspx.cs">
+      <DependentUpon>TaskList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaskList.aspx.designer.cs">
+      <DependentUpon>TaskList.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserDetails.aspx.cs">
       <DependentUpon>UserDetails.aspx</DependentUpon>

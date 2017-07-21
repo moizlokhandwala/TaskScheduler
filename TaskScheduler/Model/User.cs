@@ -31,6 +31,9 @@ namespace TaskScheduler.Model
         public string MembershipNumber { get; set; }
         public int Active { get; set; }
 
+        public int isError { get; set; }
+        public string ErrorMessage { get; set; }
+
         public Role role { get; set; }
 
         public string RegisterUser()
@@ -77,6 +80,45 @@ namespace TaskScheduler.Model
 
 
             return response;
+        }
+
+        public User isUserValid(string email,string password)
+        {
+            List<User> users = new List<User>();
+            users = GetUsers();
+            User LoggedInUser=new User();
+            foreach(User user in users)
+            {
+                if (user.EmailID.Equals(email, StringComparison.CurrentCultureIgnoreCase))
+                {
+                    if(user.Password== password)
+                    {
+                        if (user.Active != 0) { 
+                        LoggedInUser=user;
+                        break;
+                        }
+                        else
+                        {
+                            LoggedInUser.isError = 1;
+                            LoggedInUser.ErrorMessage = "User not Active, Kindly contact the admin!!!";
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        LoggedInUser.isError=1;
+                        LoggedInUser.ErrorMessage = "Incorrect Password!!!";
+                        break;
+                    }
+                }
+                else
+                {
+                    LoggedInUser.isError = 1;
+                    LoggedInUser.ErrorMessage = "User not found!!!";
+                }
+            }
+
+            return LoggedInUser;
         }
 
         public List<UserView> GetUsersView()
@@ -132,11 +174,12 @@ namespace TaskScheduler.Model
                     user.Active = reader.GetInt32(13);
                     user.role.ID = reader.GetInt32(14);
                     user.role.Active = reader.GetInt32(15);
+                    user.Password = reader.GetString(16);
                     users.Add(user);
 
                 }
 
-                dbService.CloseDB();
+               // dbService.CloseDB();
             }
 
                     return users;
@@ -160,6 +203,16 @@ namespace TaskScheduler.Model
 
 
             return user;
+        }
+
+        public int ActivateUser(int userID)
+        {
+            string query = "update [USER] set Active = 1 where ID=" + userID;
+
+            int result = dbService.ExecuteUpdate(query);
+
+            return result;
+
         }
     }
 }

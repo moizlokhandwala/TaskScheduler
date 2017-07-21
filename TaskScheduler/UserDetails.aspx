@@ -77,15 +77,7 @@
                                 </div>
                             </div>
                         </div>
-                        <hr />
-                        <div class="row">
-                            <div class="col-md-3"></div>
-                            <div class="form-group col-md-6">
-                                <asp:Button ID="updateUser_btn" OnClick="updateUser_btn_Click" Text="Update" runat="server" CssClass="btn btn-default btn-success" />
-
-
-                            </div>
-                        </div>
+                     
                     </div>
                 </div>
 

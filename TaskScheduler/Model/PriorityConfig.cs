@@ -30,8 +30,24 @@ namespace TaskScheduler.Model
 
                 priorities.Add(priority);
             }
-            dbService.CloseDB();
+           // dbService.CloseDB();
             return priorities;
+        }
+
+        public PriorityConfig GetPriority(int id) {
+            PriorityConfig priority = new PriorityConfig();
+            List<PriorityConfig> priorities = new List<PriorityConfig>();
+            priorities = GetPriorities();
+            foreach(PriorityConfig pc in priorities)
+            {
+                if (pc.ID == id)
+                {
+                    priority = pc;
+                    break;
+                }
+            }
+
+            return priority;
         }
     }
 }
