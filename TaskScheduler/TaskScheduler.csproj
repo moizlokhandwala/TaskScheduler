@@ -224,6 +224,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TaskDetails.aspx" />
     <Content Include="TaskList.aspx" />
     <Content Include="UserDetails.aspx" />
     <Content Include="Users.aspx" />
@@ -261,6 +262,13 @@
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model\Activity.cs" />
+    <Compile Include="TaskDetails.aspx.cs">
+      <DependentUpon>TaskDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TaskDetails.aspx.designer.cs">
+      <DependentUpon>TaskDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\ActivityView.cs" />
     <Compile Include="Model\Feature.cs" />
     <Compile Include="Model\PriorityConfig.cs" />

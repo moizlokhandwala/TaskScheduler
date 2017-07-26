@@ -13,7 +13,8 @@
                 <asp:GridView ClientIDMode="Static" AutoGenerateColumns="false" 
                         Width="100%" class="table table-responsive table-striped table-bordered table-hover"
                         runat="server" ID="tasks_gv" EmptyDataText="There are no tasks for you today." 
-                        OnRowCommand="tasks_gv_RowCommand" OnRowUpdating="tasks_gv_RowUpdating" OnRowEditing="tasks_gv_RowEditing">
+                        OnRowCommand="tasks_gv_RowCommand" OnRowUpdating="tasks_gv_RowUpdating" OnRowEditing="tasks_gv_RowEditing"
+                    OnRowDataBound="tasks_gv_RowDataBound">
                     <Columns>
 
                         <asp:TemplateField>

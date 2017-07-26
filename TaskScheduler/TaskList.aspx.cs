@@ -37,6 +37,7 @@ namespace TaskScheduler
             if(e.CommandName== "update")
             {
                 int ActivityID = Int32.Parse(e.CommandArgument.ToString());
+                Response.Redirect("TaskDetails.aspx?activityid="+ActivityID);
             }
         }
 
@@ -53,6 +54,20 @@ namespace TaskScheduler
         protected void add_btn_Click(object sender, EventArgs e)
         {
             Response.Redirect("AddTask.aspx");
+        }
+
+        protected void tasks_gv_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            int userType = Int32.Parse(Session["usertype_ts"].ToString());
+            if(userType==1 || userType == 2)
+            {
+
+            }
+            else
+            {
+                e.Row.Cells[0].Visible = false;
+            }
+            
         }
     }
 }
