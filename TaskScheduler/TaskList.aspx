@@ -83,7 +83,17 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
 
+                         <asp:TemplateField ShowHeader="False">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="details_btn" runat="server" CausesValidation="false" CommandName="details"
+                                        CommandArgument='<%# Eval("TaskID") %>'>
+                                        <asp:Label runat="server" ID="details_lbl">
+                                          View Details
+                                        </asp:Label>
 
+                                    </asp:LinkButton>
+                                </ItemTemplate>
+                            </asp:TemplateField>
 
                     </Columns>
                     </asp:GridView>

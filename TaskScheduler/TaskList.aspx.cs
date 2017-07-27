@@ -38,6 +38,10 @@ namespace TaskScheduler
             {
                 int ActivityID = Int32.Parse(e.CommandArgument.ToString());
                 Response.Redirect("TaskDetails.aspx?activityid="+ActivityID);
+            }else if (e.CommandName == "details")
+            {
+                int TaskID = Int32.Parse(e.CommandArgument.ToString());
+                Response.Redirect("TaskDetails.aspx?TaskID=" + TaskID);
             }
         }
 

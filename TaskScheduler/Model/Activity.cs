@@ -89,5 +89,28 @@ namespace TaskScheduler.Model
 
             return aviews;
         }
+
+        public List<Activity> GetActivityByTask(int id)
+        {
+            List<Activity> activities = new List<Activity>();
+            List<Activity> filterActivities = new List<Activity>();
+
+
+            activities = GetActivities();
+            foreach (Activity activity in activities)
+            {
+              //  Task task = new Task();
+               // User user = new User();
+
+                if (activity.Task.TaskID == id)
+                {
+
+                    filterActivities.Add(activity);
+                }
+
+            }
+
+            return filterActivities;
+        }
     }
 }
