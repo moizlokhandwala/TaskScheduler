@@ -25,16 +25,8 @@ namespace TaskScheduler
                 {
                     menuItems.Text += @"<li><a href = 'Users.aspx'><i class='fa fa-users fa-fw'></i> Users</a></li>";
                     menuItems.Text += @"<li><a href = 'Reports.aspx'><i class='fa fa-table fa-fw'></i> Reports</a></li>";
-
+                    menuItems.Text += @"<li><a href = 'OrganizationStructure.aspx'><i class='fa fa-table fa-fw'></i> Organization Structure</a></li>";
                 }
-              
-
-
-
-             
-
-                
-
             }
             else
             {

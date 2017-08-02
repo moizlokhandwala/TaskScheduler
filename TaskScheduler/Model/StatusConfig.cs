@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
 using System.Linq;
 using System.Web;
@@ -18,18 +19,20 @@ namespace TaskScheduler.Model
         {
             List<StatusConfig> statuses = new List<StatusConfig>();
 
-            OleDbDataReader dr = dbService.ExecuteDataReader("select * from STATUSCONFIG");
+            // OleDbDataReader dr = dbService.ExecuteDataReader("select * from STATUSCONFIG");
+            DataTable dts = dbService.ExecuteDataReader("select * from STATUSCONFIG");
 
-            while (dr.Read())
+            //while (dr.Read())
+            foreach(DataRow dr in dts.Rows)
             {
                 StatusConfig status = new StatusConfig();
 
-                status.ID = dr.GetInt32(0);
-                status.Value = dr.GetString(1);
+                status.ID = Int32.Parse(dr[0].ToString());
+                status.Value = dr[1].ToString();
 
                 statuses.Add(status);
             }
-            //dbService.CloseDB();
+            dbService.CloseDB();
             return statuses;
         }
 

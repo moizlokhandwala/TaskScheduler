@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.OleDb;
 using System.Linq;
 using System.Web;
@@ -144,45 +145,48 @@ namespace TaskScheduler.Model
         public List<User> GetUsers()
         {
             List<User> users = new List<User>();
-            
-            OleDbDataReader reader = dbService.ExecuteDataReader(selectUsers);
-            if (reader != null)
+
+            //OleDbDataReader reader = dbService.ExecuteDataReader(selectUsers);
+            DataTable dts= dbService.ExecuteDataReader(selectUsers); 
+            if (dts != null)
             {
-                while (reader.Read())
+              //  while (reader.Read())
+              foreach(DataRow reader in dts.Rows)
                 {
                     User user = new User();
                     Role role = new Role();
                     user.role = role;
-                    user.ID = reader.GetInt32(0);
-                    user.Name = reader.GetString(1);
-                    user.FathersName = reader.GetString(2);
-                    user.role.RoleName = reader.GetString(3);
-                    user.AddressLocal = reader.GetString(4);
-                    user.AddressPermanent = reader.GetString(5);
-                    user.CelNumber = reader.GetString(6);
-                    user.WhatsAppNumber = reader.GetString(7);
-                    user.EmailID = reader.GetString(8);
-                    user.CRONumber = reader.GetString(9);
-                    if ( reader["ArticleshipStartDate"] != DBNull.Value) {
-                        user.ArticleShipStartDate = reader.GetDateTime(10);
+                    user.ID = Int32.Parse(reader[0].ToString());
+                    user.Name = reader[1].ToString();
+                    user.FathersName = reader[2].ToString();
+                    user.role.RoleName = reader[3].ToString();
+                    user.AddressLocal = reader[4].ToString();
+                    user.AddressPermanent = reader[5].ToString();
+                    user.CelNumber = reader[6].ToString();
+                    user.WhatsAppNumber = reader[7].ToString();
+                    user.EmailID = reader[8].ToString();
+                    user.CRONumber = reader[9].ToString();
+                    if (reader["ArticleshipStartDate"] != DBNull.Value)
+                    {
+                        user.ArticleShipStartDate = DateTime.Parse(reader["ArticleshipStartDate"].ToString());
                     }
                     if (reader["MembershipDate"] != DBNull.Value)
                     {
-                        user.MembershipDate = reader.GetDateTime(11);
+                        user.MembershipDate = DateTime.Parse(reader[11].ToString());
                     }
-                    user.MembershipNumber = reader.GetString(12);
-                    user.Active = reader.GetInt32(13);
-                    user.role.ID = reader.GetInt32(14);
-                    user.role.Active = reader.GetInt32(15);
-                    user.Password = reader.GetString(16);
+                    user.MembershipNumber = reader[12].ToString();
+                    user.Active = Int32.Parse(reader[13].ToString());
+                    user.role.ID = Int32.Parse(reader[14].ToString());
+                    user.role.Active = Int32.Parse(reader[15].ToString());
+                    user.Password = reader[16].ToString();
                     users.Add(user);
 
                 }
 
-               // dbService.CloseDB();
+                // dbService.CloseDB();
             }
 
-                    return users;
+            return users;
         }
 
         public User GetUserDetails(int userid)

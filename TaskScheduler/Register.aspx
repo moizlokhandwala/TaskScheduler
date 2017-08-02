@@ -209,7 +209,7 @@
                                     </div>
                                     <div class="form-group col-md-6" ng-show="userType_ddl=='4'">
                                         <asp:Label runat="server" ID="articleDate_lbl" Text="Articleship Start Date"></asp:Label>
-                                        <asp:TextBox TextMode="Date" runat="server" ID="articleDate_txt" placeholder="Articleship Date" CssClass="form-control"></asp:TextBox>
+                                        <asp:TextBox  runat="server" ID="articleDate_txt" placeholder="Articleship Date" CssClass="form-control"></asp:TextBox>
                                         <ajaxToolkit:CalendarExtender ID="CalendarExtender1" TargetControlID="articleDate_txt" Format="dd/MM/yyyy" runat="server" />
                                     </div>
 
@@ -232,7 +232,7 @@
                                     </div>
                                     <div class="form-group col-md-6" ng-show="userType_ddl=='2'">
                                         <asp:Label runat="server" ID="membershipDate_lbl" Text="Membership Date"></asp:Label>
-                                        <asp:TextBox TextMode="Date"  runat="server" ID="membershipDate_txt" placeholder="Membership Date" CssClass="form-control" ></asp:TextBox>
+                                        <asp:TextBox  runat="server" ID="membershipDate_txt" placeholder="Membership Date" CssClass="form-control" ></asp:TextBox>
                                         <ajaxToolkit:CalendarExtender ID="CalendarExtender2" TargetControlID="membershipDate_txt" Format="dd/MM/yyyy" runat="server" />
                                     </div>
 

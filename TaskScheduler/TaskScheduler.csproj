@@ -68,7 +68,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddClient.aspx" />
     <Content Include="AddTask.aspx" />
+    <Content Include="EditActivity.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Library\dist\css\sb-admin-2.css" />
     <Content Include="Library\dist\css\sb-admin-2.min.css" />
@@ -167,6 +169,7 @@
     <Content Include="Library\vendor\raphael\raphael.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="OrganizationStructure.aspx" />
     <Content Include="packages.config" />
     <Content Include="Register.aspx" />
     <Content Include="Site1.Master" />
@@ -233,12 +236,26 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddClient.aspx.cs">
+      <DependentUpon>AddClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddClient.aspx.designer.cs">
+      <DependentUpon>AddClient.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddTask.aspx.cs">
       <DependentUpon>AddTask.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddTask.aspx.designer.cs">
       <DependentUpon>AddTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditActivity.aspx.cs">
+      <DependentUpon>EditActivity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditActivity.aspx.designer.cs">
+      <DependentUpon>EditActivity.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -262,6 +279,16 @@
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model\Activity.cs" />
+    <Compile Include="Model\Client.cs" />
+    <Compile Include="Model\Nature.cs" />
+    <Compile Include="Model\Structure.cs" />
+    <Compile Include="OrganizationStructure.aspx.cs">
+      <DependentUpon>OrganizationStructure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrganizationStructure.aspx.designer.cs">
+      <DependentUpon>OrganizationStructure.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TaskDetails.aspx.cs">
       <DependentUpon>TaskDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

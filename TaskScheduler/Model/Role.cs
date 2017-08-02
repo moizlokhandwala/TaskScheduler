@@ -22,16 +22,20 @@ namespace TaskScheduler.Model
         {
             List<Role> roles = new List<Role>();
 
-            OleDbDataReader reader = dbService.ExecuteDataReader(selectRoles);
-            if (reader != null) { 
-            while(reader.Read())
+            DataTable dts = dbService.ExecuteDataReader(selectRoles);
+            if (dts != null) { 
+           // while(reader.Read())
+           foreach(DataRow reader in dts.Rows)
             {
                 Role role = new Role();
 
-                role.ID = reader.GetInt32(0);
-                role.RoleName = reader.GetString(1);
-                role.Active = reader.GetInt32(2);
-                roles.Add(role);
+                    //role.ID = reader.GetInt32(0);
+                    //role.RoleName = reader.GetString(1);
+                    //role.Active = reader.GetInt32(2);
+                    role.ID = Int32.Parse(reader[0].ToString());
+                    role.RoleName = reader[1].ToString();
+                    role.Active = Int32.Parse(reader[2].ToString());
+                    roles.Add(role);
             }
             }
            // dbService.CloseDB();

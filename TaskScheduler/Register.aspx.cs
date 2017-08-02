@@ -16,7 +16,8 @@ namespace TaskScheduler
             Page.MaintainScrollPositionOnPostBack = true;
             if (!IsPostBack)
             {
-                CalendarExtender2.SelectedDate = new DateTime();
+                CalendarExtender2.SelectedDate = DateTime.Now;
+                CalendarExtender1.SelectedDate = DateTime.Now;
                 Role role = new Role();
 
                 userType_ddl.DataSource = role.GetActiveRoles();
@@ -88,7 +89,9 @@ namespace TaskScheduler
             string FullName = fullname_txt.Text;
             string FatherName = fathername_txt.Text;
             string LocalAddress = localaddress_txt.Text;
+            LocalAddress = LocalAddress.Replace("\'","\'\'");
             string PermanentAddress = permanetAddress_txt.Text;
+            PermanentAddress = PermanentAddress.Replace("\'", "\'\'");
             string MobileNumber = mobilenumber_txt.Text;
             string WhatsappNumber = whatsappnumber_txt.Text;
             string EmailID = emailid_txt.Text;
@@ -120,13 +123,14 @@ namespace TaskScheduler
             user.RoleID = Int32.Parse(userType);
             if (user.RoleID == 2)
             {
-                user.MembershipDate = DateTime.ParseExact(membershipDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                 user.MembershipDate = DateTime.ParseExact(membershipDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                //user.MembershipDate = DateTime.Now;
                 user.MembershipNumber = membershipNumber;
             }else if (user.RoleID == 4)
             {
                 user.CRONumber = croNum;
-                user.ArticleShipStartDate = DateTime.ParseExact(articleshipDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-
+                   user.ArticleShipStartDate = DateTime.ParseExact(articleshipDate, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                //user.ArticleShipStartDate= DateTime.Now;
             }
             else
             {
@@ -137,6 +141,7 @@ namespace TaskScheduler
                 user.ArticleShipStartDate = new DateTime();
             }
 
+            
 
             user.RegisterUser();
             

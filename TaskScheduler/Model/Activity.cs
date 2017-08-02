@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using TaskScheduler.Service;
 using System.Data.OleDb;
+using System.Configuration;
+using System.Data;
+
 namespace TaskScheduler.Model
 {
     public class Activity
@@ -22,24 +25,26 @@ namespace TaskScheduler.Model
         public List<Activity> GetActivities()
         {
             List<Activity> activities = new List<Activity>();
-            string query = "select * from Activity";
+            string query = "select * from Activity order by id desc";
 
-             OleDbDataReader reader= dbService.ExecuteDataReader(query);
-            while (reader.Read())
+            //OleDbDataReader reader = dbService.ExecuteDataReader(query);
+            DataTable dts= dbService.ExecuteDataReader(query); 
+           // while (reader.Read())
+           foreach(DataRow reader in dts.Rows)
             {
                 Task task = new Task();
                 User user = new User();
 
                 Activity activity = new Activity();
-                activity.ID = reader.GetInt32(0);
-                activity.Task = task.GetTask(reader.GetInt32(1));
-                activity.AssignedBy = user.GetUserDetails(reader.GetInt32(2));
-                activity.Assignee=user.GetUserDetails(reader.GetInt32(3));
-                activity.Status = reader.GetInt32(4);
-                activity.Comments = reader.GetString(7);
+                activity.ID = Int32.Parse(reader[0].ToString());
+                activity.Task = task.GetTask(Int32.Parse(reader[1].ToString()));
+                activity.AssignedBy = user.GetUserDetails(Int32.Parse(reader[2].ToString()));
+                activity.Assignee = user.GetUserDetails(Int32.Parse(reader[3].ToString()));
+                activity.Status = Int32.Parse(reader[4].ToString());
+                activity.Comments = reader[7].ToString();
                 activities.Add(activity);
             }
-            
+
             return activities;
         }
 
@@ -112,5 +117,41 @@ namespace TaskScheduler.Model
 
             return filterActivities;
         }
+
+        public int StartStopActivity(int ActivityID,int operation)
+        {
+            int updateCount = 0;
+            string query = ""; 
+            if (operation == 2)
+            {
+                query = "update ACTIVITY set starttime=getdate(),Status=2 where ID=" + ActivityID;
+            }
+            else
+            {
+                query = "update ACTIVITY set endtime=getdate(),Status=3 where ID=" + ActivityID;
+            }
+            
+            updateCount = dbService.ExecuteUpdate(query);
+            return updateCount;
+        }
+
+        public int AddUpdate()
+        {
+            int updateCount = 0;
+            string query = ConfigurationManager.AppSettings["UpdateActvity"].ToString();
+            //{Author},{ASSIGNEE},'{Comments}'
+
+            query = query.Replace("{TaskID}", Task.TaskID + "");
+            query = query.Replace("{ActivityID}", ID+"");
+            query = query.Replace("{Author}", AssignedBy.ID+"");
+            query = query.Replace("{ASSIGNEE}", Assignee.ID+"");
+            query = query.Replace("{Comments}", Comments);
+            query = query.Replace("{Status}", Task.Status.ID+"");
+            query = query.Replace("{ActivityStatus}", Status + "");
+            updateCount = dbService.ExecuteUpdate(query);
+            return updateCount;
+
+        }
+
     }
 }

@@ -6,6 +6,7 @@ using System.Threading;
 using System.Data.OleDb;
 using System.Configuration;
 using System.Data;
+using TaskScheduler.Model;
 
 namespace TaskScheduler.Service
 {
@@ -52,10 +53,10 @@ namespace TaskScheduler.Service
             return _instance;
         }
 
-        public OleDbDataReader ExecuteDataReader(string _query)
+        public DataTable ExecuteDataReader(string _query)
         {
             OleDbDataReader dr = null;
-           
+            DataTable dt = new DataTable("dt");
             try
             {
                 if (connection.State == ConnectionState.Closed)
@@ -68,17 +69,21 @@ namespace TaskScheduler.Service
                 dr = selectCommand.ExecuteReader();
 
                 
-            }catch(Exception ex)
+                dt.Load(dr);
+
+            }
+            catch(Exception ex)
             {
               
                 dr = null;
             }
             finally
             {
-              
+                
+                dr.Close();
             }
 
-            return dr;
+            return dt;
 
         }
 
@@ -117,6 +122,30 @@ namespace TaskScheduler.Service
             }
 
             return resultCount;
+        }
+
+        public int ExecuteClientProc(OleDbCommand procCommand)
+        {
+            int returnValue = 0;
+
+            try
+            {
+                if (connection.State == ConnectionState.Closed)
+                {
+                    connection.Open();
+                }
+                procCommand.Connection = connection;
+
+                int returnvalue = procCommand.ExecuteNonQuery();
+
+                int ScopeID = Int32.Parse(procCommand.Parameters["@pScopeID"].Value.ToString());
+
+            }
+            catch(Exception ex)
+            {
+                returnValue = -1;
+            }
+                return returnValue;
         }
 
     }

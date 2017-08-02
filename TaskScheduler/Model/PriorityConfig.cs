@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.OleDb;
 using TaskScheduler.Service;
+using System.Data;
 
 namespace TaskScheduler.Model
 {
@@ -19,15 +20,18 @@ namespace TaskScheduler.Model
         {
             List<PriorityConfig> priorities = new List<PriorityConfig>();
 
-            OleDbDataReader dr = dbService.ExecuteDataReader("select * from PRIORITYCONFIG");
+            DataTable dt = dbService.ExecuteDataReader("select * from PRIORITYCONFIG");
 
-            while (dr.Read())
+          //  while (dr.Read())
+          foreach(DataRow dr in dt.Rows)
             {
                 PriorityConfig priority = new PriorityConfig();
 
-                priority.ID = dr.GetInt32(0);
-                priority.Value = dr.GetString(1);
-
+                //priority.ID = dr.GetInt32(0);
+                //priority.Value = dr.GetString(1);
+                //dr.
+                priority.ID = Int32.Parse(dr[0].ToString());
+                priority.Value = dr[1].ToString();
                 priorities.Add(priority);
             }
            // dbService.CloseDB();
