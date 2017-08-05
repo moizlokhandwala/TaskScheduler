@@ -195,9 +195,6 @@
                                     <div class="col-md-6"></div>
                                     <div class="form-group col-md-6">
                                         <label>Type</label>
-
-
-
                                         <asp:DropDownList ID="userType_ddl" ng-init="userType_ddl='1'" runat="server" ng-model="userType_ddl" ng-change="test()" AutoPostBack="false" OnSelectedIndexChanged="userType_ddl_SelectedIndexChanged" CssClass="form-control" required></asp:DropDownList>
                                     </div>
 

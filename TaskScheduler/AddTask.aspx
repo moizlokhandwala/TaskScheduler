@@ -12,7 +12,7 @@
         <div class="col-lg-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-               <b>     Please fill the form to add a new task.</b>
+                    <b>Please fill the form to add a new task.</b>
                 </div>
                 <div class="panel-body">
                     <div class="row">

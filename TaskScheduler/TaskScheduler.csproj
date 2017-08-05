@@ -70,6 +70,7 @@
   <ItemGroup>
     <Content Include="AddClient.aspx" />
     <Content Include="AddTask.aspx" />
+    <Content Include="Clients.aspx" />
     <Content Include="EditActivity.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Library\dist\css\sb-admin-2.css" />
@@ -169,6 +170,7 @@
     <Content Include="Library\vendor\raphael\raphael.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
+    <Content Include="OrganizationNature.aspx" />
     <Content Include="OrganizationStructure.aspx" />
     <Content Include="packages.config" />
     <Content Include="Register.aspx" />
@@ -250,6 +252,13 @@
     <Compile Include="AddTask.aspx.designer.cs">
       <DependentUpon>AddTask.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Clients.aspx.cs">
+      <DependentUpon>Clients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clients.aspx.designer.cs">
+      <DependentUpon>Clients.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EditActivity.aspx.cs">
       <DependentUpon>EditActivity.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -282,6 +291,13 @@
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\Nature.cs" />
     <Compile Include="Model\Structure.cs" />
+    <Compile Include="OrganizationNature.aspx.cs">
+      <DependentUpon>OrganizationNature.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrganizationNature.aspx.designer.cs">
+      <DependentUpon>OrganizationNature.aspx</DependentUpon>
+    </Compile>
     <Compile Include="OrganizationStructure.aspx.cs">
       <DependentUpon>OrganizationStructure.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

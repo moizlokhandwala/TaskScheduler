@@ -27,6 +27,8 @@ namespace TaskScheduler
             Structure structure = new Structure();
             structure.Value = value;
             structure.AddStructure();
+
+            Response.Redirect("OrganizationStructure.aspx");
         }
 
         protected void structures_gv_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -45,6 +47,11 @@ namespace TaskScheduler
         }
 
         protected void structures_gv_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+        }
+
+        protected void structures_gv_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
 
         }
