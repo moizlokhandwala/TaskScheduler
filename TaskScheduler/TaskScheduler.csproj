@@ -69,9 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddClient.aspx" />
+    <Content Include="AddPromoter.aspx" />
     <Content Include="AddTask.aspx" />
+    <Content Include="ClientDetails.aspx" />
     <Content Include="Clients.aspx" />
     <Content Include="EditActivity.aspx" />
+    <Content Include="EditProfile.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Library\dist\css\sb-admin-2.css" />
     <Content Include="Library\dist\css\sb-admin-2.min.css" />
@@ -245,12 +248,26 @@
     <Compile Include="AddClient.aspx.designer.cs">
       <DependentUpon>AddClient.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AddPromoter.aspx.cs">
+      <DependentUpon>AddPromoter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddPromoter.aspx.designer.cs">
+      <DependentUpon>AddPromoter.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AddTask.aspx.cs">
       <DependentUpon>AddTask.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AddTask.aspx.designer.cs">
       <DependentUpon>AddTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientDetails.aspx.cs">
+      <DependentUpon>ClientDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientDetails.aspx.designer.cs">
+      <DependentUpon>ClientDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Clients.aspx.cs">
       <DependentUpon>Clients.aspx</DependentUpon>
@@ -265,6 +282,13 @@
     </Compile>
     <Compile Include="EditActivity.aspx.designer.cs">
       <DependentUpon>EditActivity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditProfile.aspx.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditProfile.aspx.designer.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
@@ -288,8 +312,10 @@
       <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model\Activity.cs" />
+    <Compile Include="Model\Attendance.cs" />
     <Compile Include="Model\Client.cs" />
     <Compile Include="Model\Nature.cs" />
+    <Compile Include="Model\Promoter.cs" />
     <Compile Include="Model\Structure.cs" />
     <Compile Include="OrganizationNature.aspx.cs">
       <DependentUpon>OrganizationNature.aspx</DependentUpon>

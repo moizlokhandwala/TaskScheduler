@@ -24,6 +24,10 @@
 
     <!-- Custom Fonts -->
     <link href="Library/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+
+    <link href="Library/style.css" rel="stylesheet" />
+    
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

@@ -58,6 +58,15 @@ namespace TaskScheduler {
         protected global::System.Web.UI.WebControls.Label priority_lbl;
         
         /// <summary>
+        /// clientname_lbl control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label clientname_lbl;
+        
+        /// <summary>
         /// status_lbl control.
         /// </summary>
         /// <remarks>

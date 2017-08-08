@@ -15,18 +15,10 @@ namespace TaskScheduler
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Client client = new Client();
-            
-            client.Name = "Moiz Lokh";
-            client.Landline = "88288282";
-            client.LocalAddress = "Local Address";
-            client.RegAddress = "Registered Address";
-            client.Email = "abc@test.com";
-            client.AccEmail = "";
-
+            if (!IsPostBack) { 
             FillStructureGrid();
             FillNatureGrid();
-
+            }
         }
 
         public void FillNatureGrid()
@@ -70,10 +62,27 @@ namespace TaskScheduler
 
             Client client = new Client();
 
-            
+            client.Name = clientname;
+            client.Landline = landline;
+            client.LocalAddress = localaddress;
+            client.RegAddress = registeredAddress;
+            client.Email = email;
+            client.StructureID = new Structure();
+            client.StructureID.ID = Int32.Parse(structure);
+            client.PAN = pan;
+            client.TAN = tan;
+            client.GST = gst;
+            client.NatureID = new Nature();
+            client.NatureID.ID = Int32.Parse(nature);
+            client.BusinessType = businessType;
+            client.AccName = accName;
+            client.AccEmail = accEmail;
+            client.AccMobile = accMobile;
+            client.AccWhatsapp = accWhatsapp;
 
             int returnValue = client.AddClient();
 
+            Response.Redirect("AddPromoter.aspx?clientId="+returnValue);
 
         }
     }

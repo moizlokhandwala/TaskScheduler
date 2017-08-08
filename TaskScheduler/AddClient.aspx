@@ -146,7 +146,7 @@
                                 </div>
 
                                 <div class="form-group col-md-6">
-                                     <asp:Button ID="add_btn" OnClick="add_btn_Click" Text="Add" runat="server" CssClass="btn btn-default btn-block" 
+                                     <asp:Button ID="add_btn" OnClick="add_btn_Click" Text="Add" runat="server" CssClass="btn btn-primary btn-block" 
                                              />
                                 </div>
 

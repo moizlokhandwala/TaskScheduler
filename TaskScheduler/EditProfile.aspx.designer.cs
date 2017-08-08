@@ -10,78 +10,78 @@
 namespace TaskScheduler {
     
     
-    public partial class UserDetails {
+    public partial class EditProfile {
         
         /// <summary>
-        /// username_lbl control.
+        /// fullname_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label username_lbl;
+        protected global::System.Web.UI.WebControls.TextBox fullname_txt;
         
         /// <summary>
-        /// edit_btn control.
+        /// fathername_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton edit_btn;
+        protected global::System.Web.UI.WebControls.TextBox fathername_txt;
         
         /// <summary>
-        /// permanentaddress_lbl control.
+        /// localaddress_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label permanentaddress_lbl;
+        protected global::System.Web.UI.WebControls.TextBox localaddress_txt;
         
         /// <summary>
-        /// localaddress_lbl control.
+        /// permanetAddress_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label localaddress_lbl;
+        protected global::System.Web.UI.WebControls.TextBox permanetAddress_txt;
         
         /// <summary>
-        /// mobile_lbl control.
+        /// mobilenumber_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label mobile_lbl;
+        protected global::System.Web.UI.WebControls.TextBox mobilenumber_txt;
         
         /// <summary>
-        /// whatsapp_lbl control.
+        /// whatsappnumber_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label whatsapp_lbl;
+        protected global::System.Web.UI.WebControls.TextBox whatsappnumber_txt;
         
         /// <summary>
-        /// fathername_lbl control.
+        /// emailid_txt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fathername_lbl;
+        protected global::System.Web.UI.WebControls.TextBox emailid_txt;
         
         /// <summary>
-        /// email_lbl control.
+        /// update_btn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label email_lbl;
+        protected global::System.Web.UI.WebControls.Button update_btn;
     }
 }

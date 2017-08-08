@@ -37,6 +37,13 @@ namespace TaskScheduler
                 Session["userid_ts"] = user.ID;
                 Session["usertype_ts"] = user.role.ID;
 
+                Attendance attendance = new Attendance();
+                attendance.UserID = user.ID;
+
+
+
+                attendance.AddAttendance(1);
+
                 if (user.role.ID == 1)
                 {
                     Response.Redirect("Users.aspx");

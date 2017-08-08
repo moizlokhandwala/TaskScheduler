@@ -34,7 +34,7 @@ namespace TaskScheduler
                         creationdate_lbl.Text = task.CreationDate.ToString();
                         priority_lbl.Text = task.priority.Value;
                         status_lbl.Text = task.Status.Value;
-
+                        clientname_lbl.Text = task.client.Name;
                         activityId_lbl.Text = activities[0].ID + "";
 
                         if (activities[0].Status == 1 && activities[0].Assignee.ID== Int32.Parse(userid))
@@ -51,6 +51,7 @@ namespace TaskScheduler
                         string li = "";
                         string liTag = "";
                         string titleBadge = "";
+                        string timeline = "";
                         foreach (Activity act in activities)
                         {
                             if (act.AssignedBy.ID == Int32.Parse(userid))
@@ -65,13 +66,21 @@ namespace TaskScheduler
                             if (act.Status == 1)
                             {
                                 titleBadge = "fa-exclamation";
+                                timeline = "timeline-badge-red";
+                            }
+                            else if (act.Status == 2)
+                            {
+                                titleBadge = " fa-spinner";
+                                timeline = "timeline-badge-yellow";
+                               
                             }
                             else
                             {
                                 titleBadge = "fa-check";
+                                timeline = "timeline-badge-green";
                             }
                             li += liTag + @"
-                                    <div class='timeline-badge'><i class='fa " + titleBadge
+                                    <div class='"+timeline+"'><i class='fa " + titleBadge
                                             + @"'></i>
                                     </div>
                                     <div class='timeline-panel'>

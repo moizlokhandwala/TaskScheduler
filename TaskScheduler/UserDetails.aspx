@@ -13,6 +13,10 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <asp:Label ID="username_lbl" runat="server" Text=""></asp:Label>
+                        <asp:LinkButton Visible="False" runat="server" class="pull-right" ID="edit_btn" OnClick="edit_btn_Click">
+                     <i class="fa fa-edit fa-fw"></i>
+                        </asp:LinkButton>
+
                     </div>
 
                     <div class="panel-body">
@@ -52,7 +56,7 @@
                                     <b>Whatsapp Number:</b>
                                 </div>
                                 <div class="col-md-6">
-                                     <asp:Label runat="server" ID="whatsapp_lbl"></asp:Label>
+                                    <asp:Label runat="server" ID="whatsapp_lbl"></asp:Label>
                                 </div>
                             </div>
                         </div>
@@ -73,11 +77,11 @@
                                     <b>Email:</b>
                                 </div>
                                 <div class="col-md-6">
-                                     <asp:Label runat="server" ID="email_lbl"></asp:Label>
+                                    <asp:Label runat="server" ID="email_lbl"></asp:Label>
                                 </div>
                             </div>
                         </div>
-                     
+
                     </div>
                 </div>
 

@@ -218,5 +218,24 @@ namespace TaskScheduler.Model
             return result;
 
         }
+
+        public int UpdateProfile()
+        {
+            
+            string query = ConfigurationManager.AppSettings["UpdateProfile"].ToString();
+
+            query = query.Replace("{Name}", Name);
+            query = query.Replace("{FathersName}", FathersName);
+            query = query.Replace("{AddressLocal}", AddressLocal);
+            query = query.Replace("{AddressPermanent}", AddressPermanent);
+            query = query.Replace("{CellNumber}", CelNumber);
+            query = query.Replace("{WhatsappNumber}", WhatsAppNumber);
+            query = query.Replace("{EmailID}", EmailID);
+            query = query.Replace("{ID}", ""+ID);
+
+            int result = dbService.ExecuteUpdate(query);
+
+            return result;
+        }
     }
 }

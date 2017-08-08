@@ -10,10 +10,30 @@ namespace TaskScheduler
 {
     public partial class UserDetails : System.Web.UI.Page
     {
+        int userID;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack) { 
             if (Request["userid"] != null) { 
-            int userID = Int32.Parse(Request["userid"].ToString());
+                    
+            userID = Int32.Parse(Request["userid"].ToString());
+
+                   
+
+                    int sessionUserID = Int32.Parse(Session["userid_ts"].ToString());
+
+                    if (Session["usertype_ts"].ToString() != "1" && userID != sessionUserID)
+                    {
+                        Response.Redirect("UserDetails.aspx?userid=" + sessionUserID);
+                    }
+
+                    if (userID == sessionUserID) {
+                        edit_btn.Visible = true;
+                    }
+                    else
+                    {
+                        edit_btn.Visible = false;
+                    }
                 User user = new User();
                    user = user.GetUserDetails(userID);
                 //user.Name = "Moiz Lokhandwala";
@@ -44,12 +64,17 @@ namespace TaskScheduler
 
                 Response.Redirect("Users.aspx");
             }
-
+            }
         }
 
         protected void updateUser_btn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void edit_btn_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("EditProfile.aspx");
         }
     }
 }

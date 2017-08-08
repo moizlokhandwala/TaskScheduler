@@ -57,6 +57,16 @@
                         <hr />
                         <div class="row">
                             <div class="col-md-3">
+                                <asp:Label runat="server" Text="Client Name : " Font-Bold="true"></asp:Label>
+                            </div>
+                            <div class="col-md-9">
+                                <asp:Label runat="server" ID="clientname_lbl"></asp:Label>
+                            </div>
+                        </div>
+
+                        <hr />
+                        <div class="row">
+                            <div class="col-md-3">
                                 <asp:Label runat="server" Text="Status : " Font-Bold="true"></asp:Label>
                             </div>
                             <div class="col-md-9">

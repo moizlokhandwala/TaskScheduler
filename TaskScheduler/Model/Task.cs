@@ -18,7 +18,7 @@ namespace TaskScheduler.Model
         public User Author { get; set; }
         public DateTime CreationDate { get; set; }
         public StatusConfig Status { get; set; }
-
+        public Client client { get; set; }
 
         DBService dbService = DBService.GetInstance();
         string AddTaskQuery = ConfigurationManager.AppSettings["AddTask"].ToString();
@@ -36,6 +36,8 @@ namespace TaskScheduler.Model
 
                 PriorityConfig pr = new PriorityConfig();
                 StatusConfig sc = new StatusConfig();
+                Client client = new Client();
+
                 User u = new User();
                 task.TaskID = Int32.Parse(dr[0].ToString());
                 task.Title = dr[1].ToString();
@@ -44,7 +46,9 @@ namespace TaskScheduler.Model
                 task.Author = u.GetUserDetails(Int32.Parse(dr[4].ToString()));
                 task.CreationDate = DateTime.Parse(dr[5].ToString());
                 task.Status = sc.GetStatus(Int32.Parse(dr[6].ToString()));
-
+                task.client = new Client();
+                client.ID = Int32.Parse(dr[7].ToString());
+                task.client = client.GetClientByID();
                 tasks.Add(task);
             }
             // dbService.CloseDB();
@@ -57,14 +61,18 @@ namespace TaskScheduler.Model
             List<Task> tasks = new List<Task>();
             tasks = task.GetTasks();
 
-            foreach(Task t in tasks)
-            {
-                if (t.TaskID == id)
-                {
-                    task = t;
-                    break;
-                }
-            }
+            var task1 = from t in tasks where t.TaskID == id select t;
+
+            task = task1.FirstOrDefault();
+
+            //foreach(Task t in tasks)
+            //{
+            //    if (t.TaskID == id)
+            //    {
+            //        task = t;
+            //        break;
+            //    }
+            //}
 
             return task;
         }

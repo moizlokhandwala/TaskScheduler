@@ -12,7 +12,11 @@ input.ng-valid {
 }
 
 .fa-check{
-    color:green;
+    color:white;
+}
+
+.fa-exclamation {
+    color: white;
 }
 
 .fa-times {
@@ -22,6 +26,57 @@ input.ng-valid {
 textarea.ng-invalid {
     border: 1px solid red;
 }
+
+
+.timeline > li > .timeline-badge-red {
+    z-index: 100;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    border-radius: 50% 50% 50% 50%;
+    text-align: center;
+    font-size: 1.4em;
+    line-height: 50px;
+    color: #fff;
+    background-color: red; 
+}
+
+.timeline > li > .timeline-badge-green {
+    z-index: 100;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    border-radius: 50% 50% 50% 50%;
+    text-align: center;
+    font-size: 1.4em;
+    line-height: 50px;
+    color: #fff;
+    background-color: green;
+}
+
+.timeline > li > .timeline-badge-yellow {
+    z-index: 100;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    margin-left: -25px;
+    border-radius: 50% 50% 50% 50%;
+    text-align: center;
+    font-size: 1.4em;
+    line-height: 50px;
+    color: #fff;
+    background-color: orange;
+}
+
+
 
 textarea.ng-valid {
     border: 1px solid green;
